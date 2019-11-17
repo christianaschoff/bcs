@@ -29,6 +29,11 @@ steps:
     script: |
       echo yolo
       npm install
+      echo done
+    workingDirectory: 'UI/bcs-frontend'
+- task: CmdLine@2
+  inputs:
+    script: |
       echo install complete...now build the app
       ng build
       echo done
