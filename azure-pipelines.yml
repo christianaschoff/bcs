@@ -19,6 +19,7 @@ steps:
    inputs:
      command: 'build'
      projects: '**/*.csproj'
+   name: 'build_backend'
 
  - task: NodeTool@0
    inputs:    
@@ -27,10 +28,12 @@ steps:
  - script:
     npm install @angular/cli@8.3.14
    workingDirectory: 'UI/bcs-frontend'
+   name: 'install_angular'
 
- - script:
+ - script:  
         npm install
    workingDirectory: 'UI/bcs-frontend'
+   name: 'install_npm'
 
  - script: |
         echo NG VERSION:
@@ -42,49 +45,17 @@ steps:
         echo NG VERSION AFTER UPDATE:
         npm run ng --version
    workingDirectory: 'UI/bcs-frontend'
+   name: 'install_correct_ts'
 
  - script:  
       npx ng build --prod 
    displayName: 'ng build'
    workingDirectory: 'UI/bcs-frontend'
+   name: 'build_ui'
 
  - task: PublishBuildArtifacts@1
    inputs:
     PathtoPublish: 'UI/bcs-frontend/dist'
     ArtifactName: 'app'
     publishLocation: 'Container'
-    
-#- task: Npm@1
-#  inputs:
-#    command: 'install'
-#    workingDir: 'UI/bcs-frontend'
-
-#- task: CmdLine@2
-#  inputs:
-#    script: |
-#      echo yolo
-#      npm install
-#      echo done
-#    workingDirectory: 'UI/bcs-frontend'
-
-#- task: Npm@1
-#  inputs:
-#    command: 'custom'
-#    workingDir: 'UI/bcs-frontend'
-#    customCommand: 'install @angular/cli'
-
-
-
-#- task: Npm@1
-#  inputs:
-#    command: 'custom'
-#    workingDir: 'UI/bcs-frontend'
-#    customCommand: 'run build'
-
-#- task: CmdLine@2
-#  inputs:
-#    script: |
-#      echo install complete...now build the app
-#      ng build
-#      echo done
-#    workingDirectory: 'UI/bcs-frontend'
+  
