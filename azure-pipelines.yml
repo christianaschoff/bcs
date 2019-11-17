@@ -27,8 +27,7 @@ steps:
 
   - script:
       npm install @angular/cli -g
-    workingDirectory: 'UI/bcs-frontend'
-
+    
   - script:
       npm install
     workingDirectory: 'UI/bcs-frontend'
