@@ -26,4 +26,4 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: '/UI/bcs-frontend/package.json'
+    workingDir: './UI/bcs-frontend/package.json'
