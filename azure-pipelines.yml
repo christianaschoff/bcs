@@ -10,22 +10,38 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+  system.debug: true
 
-- script: |
-  displayName: 'Run a multi-line script'
+steps:
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: '**/*.csproj'
 
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'UI/bcs-frontend'
+
+ - task: NodeTool@0
+    inputs:    
+      versionSpec: '10.x'
+
+  - script:
+      npm install @angular/cli -g
+    workingDirectory: 'UI/bcs-frontend'
+
+  - script:
+      npm install
+    workingDirectory: 'UI/bcs-frontend'
+
+  - script:  
+      ng build 
+    displayName: 'ng build'
+    workingDirectory: UI/bcs-frontend
+
+#- task: Npm@1
+#  inputs:
+#    command: 'install'
+#    workingDir: 'UI/bcs-frontend'
 
 #- task: CmdLine@2
 #  inputs:
@@ -35,24 +51,19 @@ steps:
 #      echo done
 #    workingDirectory: 'UI/bcs-frontend'
 
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    workingDir: 'UI/bcs-frontend'
-    customCommand: 'install @angular/cli'
+#- task: Npm@1
+#  inputs:
+#    command: 'custom'
+#    workingDir: 'UI/bcs-frontend'
+#    customCommand: 'install @angular/cli'
 
 
-- task: CmdLine@2 
-  inputs:
-      script: |
-        npm run ng --version
-        echo not run ng --version
-        
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    workingDir: 'UI/bcs-frontend'
-    customCommand: 'run build'
+
+#- task: Npm@1
+#  inputs:
+#    command: 'custom'
+#    workingDir: 'UI/bcs-frontend'
+#    customCommand: 'run build'
 
 
 - task: PublishBuildArtifacts@1
