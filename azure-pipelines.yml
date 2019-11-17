@@ -32,8 +32,12 @@ steps:
         npm install
    workingDirectory: 'UI/bcs-frontend'
 
- - script:
+ - script: |
+        echo NG VERSION:
         npm run ng --version
+        npm uninstall @angular-devkit/build-angular
+        npm install @angular-devkit/build-angular
+        npm update --all
    workingDirectory: 'UI/bcs-frontend'
 
  - script:  
