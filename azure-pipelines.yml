@@ -41,6 +41,13 @@ steps:
     workingDir: 'UI/bcs-frontend'
     customCommand: 'install @angular/cli'
 
+
+- task: CmdLine@2 
+  inputs:
+      script: |
+        ng --version
+        echo ng --version
+        
 - task: Npm@1
   inputs:
     command: 'custom'
