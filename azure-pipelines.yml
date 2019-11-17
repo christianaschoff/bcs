@@ -25,7 +25,7 @@ steps:
       versionSpec: '10.x'
       
  - script:
-    npm install @angular/cli@8.3.14  -g
+    npm install @angular/cli@8.3.14
    workingDirectory: 'UI/bcs-frontend'
 
  - script:
