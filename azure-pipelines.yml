@@ -45,8 +45,8 @@ steps:
 - task: CmdLine@2 
   inputs:
       script: |
-        ng --version
-        echo ng --version
+        npm run ng --version
+        echo not run ng --version
         
 - task: Npm@1
   inputs:
