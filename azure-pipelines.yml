@@ -53,9 +53,17 @@ steps:
    workingDirectory: 'UI/bcs-frontend'
    name: 'build_ui'
 
+ - task: CopyFiles@2
+   inputs:
+    SourceFolder: 'BCS/API'
+    Contents: '**'
+    TargetFolder: 'UI/bcs-frontend/dist/backend'
+    OverWrite: true    
+    name: 'copy_backend_to_frontend'
+
  - task: PublishBuildArtifacts@1
    inputs:
     PathtoPublish: 'UI/bcs-frontend/dist'
     ArtifactName: 'app'
     publishLocation: 'Container'
-  
+
