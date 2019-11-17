@@ -44,9 +44,9 @@ steps:
    workingDirectory: 'UI/bcs-frontend'
 
  - script:  
-      ng build 
+      npm run ng build 
    displayName: 'ng build'
-   workingDirectory: UI/bcs-frontend
+   workingDirectory: 'UI/bcs-frontend'
 
  - task: PublishBuildArtifacts@1
    inputs:
