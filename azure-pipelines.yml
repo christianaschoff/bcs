@@ -18,7 +18,7 @@ steps:
  - task: DotNetCoreCLI@2
    inputs:
      command: 'build'
-     arguments: '--release'
+     arguments: '-c release'
      projects: '**/*.csproj'
    name: 'build_backend'
 
@@ -56,8 +56,8 @@ steps:
 
  - task: CopyFiles@2
    inputs:
-    SourceFolder: 'BCS/API/bin/release'
-    Contents: '**'
+    SourceFolder: 'BCS/API/bin/Release/dotnetcoreapp3.0'
+    Contents: '*.dll,*.json,API,/Properties/**'
     TargetFolder: 'UI/bcs-frontend/dist/backend'
     OverWrite: true    
    name: 'copy_backend_to_frontend'
