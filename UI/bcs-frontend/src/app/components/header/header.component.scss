@@ -1,0 +1,58 @@
+@import '../../../sass/colors';
+
+.container {
+  background-color: $grid-background-container-solid;
+  position: fixed;
+  height: 7.3rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .cen {
+
+    @media screen and (min-width:1280px) {
+      width: 76.8rem;
+      margin: auto;
+    }
+
+    /*width: 76.8rem;
+    margin: auto;*/
+
+    .headline {
+      font-size: 1.4rem;
+      margin: 1.5rem 0;
+    }
+
+    ul {
+      height: 3.2rem;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.06rem;
+    }
+
+    li {
+      float: left;
+
+      & a {
+        display: block;
+        color: white;
+        text-align: center;
+
+        padding: 10px 16px;
+
+        @media screen and (max-width:450px) {
+          padding: 10px 6px;
+        }
+
+        text-decoration: none;
+
+        &:hover {
+          color: #cef3ff;
+        }
+      }
+    }
+
+  }
+}

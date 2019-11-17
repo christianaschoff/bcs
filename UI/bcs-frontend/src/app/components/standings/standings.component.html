@@ -1,0 +1,29 @@
+<div class="content">
+  <div class="headline">BCS Standings</div>
+  In insgesamt 4 Online Turnieren werden Punkte für das große Offline Finale gesammelt.
+  <br />Insgesamt 8 Spieler qualifizieren sich.
+</div>
+
+<div class="container">
+  <div class="headline">
+    <div class="col-1">Rank</div>
+    <div class="col-2">&nbsp;</div>
+    <div class="col-3">Player</div>
+    <div class="col-4">Points</div>
+  </div>
+
+  <div class="row" *ngFor="let item of standings$ | async; index as i">
+    <div class="col-1">
+      {{i+1}}
+    </div>
+    <div class="col-2">
+      <app-icon-component race={{item.player.race}}></app-icon-component>
+    </div>
+    <div class="col-3">
+      {{item.player.name}}
+    </div>
+    <div class="col-4">
+      {{item.points}}
+    </div>
+  </div>
+</div>

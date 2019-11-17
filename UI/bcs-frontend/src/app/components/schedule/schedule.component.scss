@@ -1,0 +1,12 @@
+@import '../../../sass/colors';
+
+.content {
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+
+  .headline {
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    color: $fore-color-white;
+  }
+}

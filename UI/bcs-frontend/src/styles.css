@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  color: #a8b0bf;
+  background: url('./assets/planet.jpg') no-repeat bottom fixed;
+  background-size: cover;
+  background-color: #000000;
+}
+
+html {
+  height: 100%;
+}

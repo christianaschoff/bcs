@@ -1,0 +1,9 @@
+
+#ignore
+*.DS_Store
+[Tt]humbs.db
+[Oo]bj
+[Bb]in
+[Dd]ebug
+[Bb]uild/
+*.csproj.user

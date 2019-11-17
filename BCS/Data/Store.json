@@ -1,0 +1,49 @@
+[{
+    "points": 1600,
+    "player": {
+      "playerId": 0,
+      "name": "Faithless",
+      "race": 3
+    }
+  },
+  {
+    "points": 1100,
+    "player": {
+      "playerId": 0,
+      "name": "Borrok",
+      "race": 3
+    }
+  },
+  {
+    "points": 875,
+    "player": {
+      "playerId": 0,
+      "name": "Fraetz",
+      "race": 1
+    }
+  },
+  {
+    "points": 775,
+    "player": {
+      "playerId": 0,
+      "name": "RZA",
+      "race": 3
+    }
+  },
+  {
+    "points": 675,
+    "player": {
+      "playerId": 0,
+      "name": "Testmanager",
+      "race": 1
+    }
+  },
+  {
+    "points": 575,
+    "player": {
+      "playerId": 0,
+      "name": "Lucas",
+      "race": 1
+    }
+  }
+]

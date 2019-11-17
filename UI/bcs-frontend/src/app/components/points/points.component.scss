@@ -1,0 +1,48 @@
+@import '../../../sass/colors';
+
+.content {
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+
+  .headline {
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    color: $fore-color-white;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 8rem 6rem;
+  /* autoprefixer: off */
+  grid-auto-rows: 2rem;
+  justify-content: stretch;
+  place-items: stretch;
+  font-size: 1rem;
+  color: $fore-color-white;
+
+  .row {
+    display: contents;
+
+    &:hover div {
+      background-color: $grid-background;
+    }
+
+    div {
+      background-color: $grid-background-hover;
+      margin-top: 1px;
+      padding-top: .3rem;
+    }
+  }
+
+  .col-1 {
+    grid-column: 1;
+    text-align: center;
+  }
+
+  .col-4 {
+    grid-column: 2;
+    text-align: right;
+    padding-right: .4rem;
+  }
+}

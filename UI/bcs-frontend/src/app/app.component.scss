@@ -1,0 +1,15 @@
+.container {
+  padding-top: 7.2rem;
+  position: relative;
+  min-height: 100hv;
+
+  @media screen and (min-width:1280px) {
+    width: 76.8rem;
+    margin: auto;
+  }
+
+  .content-wrap {
+    padding-bottom: 2.5rem;
+  }
+
+}
