@@ -15,7 +15,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    npm install -g @angular/cli    
+    npm install @angular/cli 
   displayName: 'Run a multi-line script'
 
 - task: DotNetCoreCLI@2
