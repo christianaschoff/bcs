@@ -30,11 +30,13 @@ steps:
     npm install @angular/cli@8.3.14
    workingDirectory: 'UI/bcs-frontend'
    name: 'install_angular'
+   displayName: 'install Angular'
 
  - script:  
         npm install
    workingDirectory: 'UI/bcs-frontend'
    name: 'install_npm'
+   displayName: 'install dependencies via npm'
 
  - script: |
         echo NG VERSION:
@@ -47,25 +49,25 @@ steps:
         npm run ng --version
    workingDirectory: 'UI/bcs-frontend'
    name: 'install_correct_ts'
+   displayName: 'use correct angular-devkit and TS'
 
  - script:  
-      npx ng build --prod 
-   displayName: 'ng build'
+      npx ng build --prod    
    workingDirectory: 'UI/bcs-frontend'
    name: 'build_ui'
+   displayName: 'ng build'
 
  - task: CopyFiles@2
    inputs:
     SourceFolder: 'BCS/API/bin/release/netcoreapp3.0'
-    Contents: | 
-              **\!(*.pdb)              
+    Contents: '**'
     TargetFolder: 'UI/bcs-frontend/dist/backend'
-    OverWrite: true    
+    OverWrite: true
    name: 'copy_backend_to_frontend'
+   displayName: 'copy backend'
 
  - task: PublishBuildArtifacts@1
    inputs:
     PathtoPublish: 'UI/bcs-frontend/dist'
     ArtifactName: 'app'
     publishLocation: 'Container'
-
