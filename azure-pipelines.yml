@@ -56,7 +56,7 @@ steps:
 
  - task: CopyFiles@2
    inputs:
-    SourceFolder: 'BCS/API/bin/Release/dotnetcoreapp3.0'
+    SourceFolder: 'BCS/API/bin/Release/netcoreapp3.0'
     Contents: '*.dll,*.json,API,/Properties/**'
     TargetFolder: 'UI/bcs-frontend/dist/backend'
     OverWrite: true    
