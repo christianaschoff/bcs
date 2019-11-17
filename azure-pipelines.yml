@@ -11,7 +11,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  system.debug: true
+  system.debug: false
 
 steps:
 
@@ -30,6 +30,10 @@ steps:
 
  - script:
         npm install
+   workingDirectory: 'UI/bcs-frontend'
+
+ - script:
+        npm run ng --version
    workingDirectory: 'UI/bcs-frontend'
 
  - script:  
