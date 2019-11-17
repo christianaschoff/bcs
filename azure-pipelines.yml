@@ -35,8 +35,10 @@ steps:
  - script: |
         echo NG VERSION:
         npm run ng --version
-        # npm uninstall @angular-devkit/build-angular
-        # npm install @angular-devkit/build-angular
+        npm uninstall @angular-devkit/build-angular
+        npm install @angular-devkit/build-angular
+        npm uninstall typescript
+        npm install typescript@3.5.1
         echo NG VERSION AFTER UPDATE:
         npm run ng --version
    workingDirectory: 'UI/bcs-frontend'
