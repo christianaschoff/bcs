@@ -57,7 +57,8 @@ steps:
  - task: CopyFiles@2
    inputs:
     SourceFolder: 'BCS/API/bin/release/netcoreapp3.0'
-    Contents: '**'
+    Contents: | 
+              **\!(*.pdb)              
     TargetFolder: 'UI/bcs-frontend/dist/backend'
     OverWrite: true    
    name: 'copy_backend_to_frontend'
