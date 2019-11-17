@@ -23,7 +23,12 @@ steps:
   inputs:
     command: 'build'
     projects: '**/*.csproj'
-- task: Npm@1
+
+- task: CmdLine@2
   inputs:
-    command: 'install'
-    workingDir: './UI/bcs-frontend/package.json'
+    script: |
+      echo yolo
+      npm install
+      ng build
+      echo done
+    workingDirectory: 'UI/bcs-frontend'
