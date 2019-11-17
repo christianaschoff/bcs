@@ -15,28 +15,34 @@ variables:
 
 steps:
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-
+ - task: DotNetCoreCLI@2
+   inputs:
+     command: 'build'
+     projects: '**/*.csproj'
 
  - task: NodeTool@0
-    inputs:    
+   inputs:    
       versionSpec: '10.x'
+      
+ - script:
+    npm install @angular/cli -g
+   workingDirectory: 'UI/bcs-frontend'
 
-  - script:
-      npm install @angular/cli -g
-    
-  - script:
-      npm install
-    workingDirectory: 'UI/bcs-frontend'
+ - script:
+        npm install
+   workingDirectory: 'UI/bcs-frontend'
 
-  - script:  
+ - script:  
       ng build 
-    displayName: 'ng build'
-    workingDirectory: UI/bcs-frontend
+   displayName: 'ng build'
+   workingDirectory: UI/bcs-frontend
 
+ - task: PublishBuildArtifacts@1
+   inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'app'
+    publishLocation: 'Container'
+    
 #- task: Npm@1
 #  inputs:
 #    command: 'install'
@@ -64,13 +70,6 @@ steps:
 #    workingDir: 'UI/bcs-frontend'
 #    customCommand: 'run build'
 
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'app'
-    publishLocation: 'Container'
-    
 #- task: CmdLine@2
 #  inputs:
 #    script: |
