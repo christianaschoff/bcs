@@ -22,6 +22,15 @@ steps:
      projects: '**/*.csproj'
    name: 'build_backend'
 
+ - task: DotNetCoreCLI@2
+   inputs:
+    command: 'test'
+    projects: '**/*.csproj'
+    testRunTitle: 'Backendtest'
+    workingDirectory: 'BCS'
+   name: 'test_backend'
+   displayName: 'test backend'
+
  - task: NodeTool@0
    inputs:    
       versionSpec: '10.x'
