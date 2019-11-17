@@ -15,13 +15,13 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    npm install @angular/cli 
   displayName: 'Run a multi-line script'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: '**/*.csproj'
+
 - task: Npm@1
   inputs:
     command: 'install'
@@ -39,7 +39,14 @@ steps:
   inputs:
     command: 'custom'
     workingDir: 'UI/bcs-frontend'
+    customCommand: 'install @angular/cli'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: 'UI/bcs-frontend'
     customCommand: 'run build'
+
 
 - task: PublishBuildArtifacts@1
   inputs:
