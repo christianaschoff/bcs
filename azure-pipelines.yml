@@ -59,7 +59,7 @@ steps:
     Contents: '**'
     TargetFolder: 'UI/bcs-frontend/dist/backend'
     OverWrite: true    
-    name: 'copy_backend_to_frontend'
+   name: 'copy_backend_to_frontend'
 
  - task: PublishBuildArtifacts@1
    inputs:
